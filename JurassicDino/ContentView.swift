@@ -8,9 +8,47 @@
 import SwiftUI
 
 struct ContentView: View {
+    var runCount = 8
+    var deadCount = 8
+    var jumpCount = 12
+    
+    @State var action = "Jump"
+    @State var currentSprite = 1
+    
+    func getImage() -> String {
+        let base = action
+        let end = "(\(currentSprite))"
+        return base + " " + end
+    }
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Jurassic Dino")
+                .font(.custom("Jurassic Park", size: 75))
+                .foregroundColor(.primary)
+                .shadow(color: .red, radius: 0, x: 2, y: 2)
+            Image(getImage())
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 250)
+                .background(.gray)
+                .cornerRadius(25)
+            Spacer()
+            Button {
+                // Changement de Sprite
+            } label: {
+                Image(systemName: "play.circle.fill")
+                    .font(.system(size: 50))
+            }
+            HStack {
+                Button("Cours") {
+                    
+                }.buttonStyle(.borderedProminent)
+                
+            }
+
+            
+        }
     }
 }
 
