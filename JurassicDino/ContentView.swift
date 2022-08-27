@@ -21,6 +21,22 @@ struct ContentView: View {
         return base + " " + end
     }
     
+    func updateSprite() {
+        if action == "Jump" {
+            if currentSprite == jumpCount {
+                currentSprite = 1
+            } else {
+                currentSprite += 1
+            }
+        } else {
+            if currentSprite == runCount {
+                currentSprite = 1
+            } else {
+                currentSprite += 1
+            }
+        }
+    }
+    
     var body: some View {
         VStack {
             Text("Jurassic Dino")
@@ -35,17 +51,19 @@ struct ContentView: View {
                 .cornerRadius(25)
             Spacer()
             Button {
-                // Changement de Sprite
+                updateSprite()
             } label: {
                 Image(systemName: "play.circle.fill")
                     .font(.system(size: 50))
             }
             HStack {
-                Button("Cours") {
-                    
-                }.buttonStyle(.borderedProminent)
+                ActionButtonView(buttonTitle: "Cours", action: $action, currentSprite: $currentSprite)
+                Spacer()
+                ActionButtonView(buttonTitle: "Saute", action: $action, currentSprite: $currentSprite)
+                Spacer()
+                ActionButtonView(buttonTitle: "GameOver", action: $action, currentSprite: $currentSprite)
                 
-            }
+            }.padding()
 
             
         }

@@ -11,9 +11,11 @@ struct ActionButtonView: View {
     var buttonTitle: String
 
     @Binding var action: String
+    @Binding var currentSprite: Int
     
     var body: some View {
-        Button("Cours") {
+        Button(buttonTitle) {
+            currentSprite = 1
             switch buttonTitle {
             case "Cours": action = "Run"
             case "Saute": action = "Jump"
@@ -27,6 +29,6 @@ struct ActionButtonView: View {
 
 struct ActionButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ActionButtonView(buttonTitle: "Cours", action: .constant("Run"))
+        ActionButtonView(buttonTitle: "Cours", action: .constant("Run"), currentSprite: .constant(1))
     }
 }

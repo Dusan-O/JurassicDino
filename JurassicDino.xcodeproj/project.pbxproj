@@ -57,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				2F164D6528BA5FBD00B56ACC /* Jurassic Park.ttf */,
-				2F164D6728BA62AB00B56ACC /* ActionButtonView.swift */,
 				2F164D6428BA5EE400B56ACC /* Info.plist */,
 				2F164D5628BA5E9000B56ACC /* JurassicDinoApp.swift */,
 				2F164D5828BA5E9000B56ACC /* ContentView.swift */,
@@ -70,6 +69,7 @@
 		2F164D5C28BA5E9300B56ACC /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				2F164D6728BA62AB00B56ACC /* ActionButtonView.swift */,
 				2F164D5D28BA5E9300B56ACC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
